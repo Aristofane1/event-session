@@ -99,3 +99,5 @@ Cette architecture **simple et focalisée** offre :
 - Performance optimisée
 
 **En résumé** : Une session événements qui s'intègre naturellement dans le projet mère tout en restant facilement maintenable et extensible.
+
+
