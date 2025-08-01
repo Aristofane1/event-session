@@ -76,6 +76,20 @@ Le projet principal utilise déjà Riverpod, ce qui signifie :
 - **Coverage** : tests exhaustifs des scenarios d'intégration
 - **CI/CD ready** : tests rapides et fiables
 
+**Challenges et solutions adoptées**
+
+**Contexte API** : En l'absence d'APIs fournies pour cette session, plusieurs approches ont été évaluées :
+
+- **Firebase complet** : Bien que fonctionnel, l'utilisation complète des services Firebase (Auth, Firestore, etc.) aurait complexifié l'intégration dans le projet mère
+- **Backend custom** : Développer un backend dédié aurait été chronophage et sortait du scope de cette session
+- **Approche NoSQL vs relationnelle** : Firebase utilisant du NoSQL, cela pourrait créer une incohérence avec l'architecture de données du projet principal
+
+**Solution retenue** : Firebase utilisé uniquement comme **API REST simulée** via Realtime Database. Cette approche offre :
+- ✅ **Simulation réaliste** des appels API
+- ✅ **Intégration simplifiée** : seule la couche API à remplacer dans le projet mère  
+- ✅ **Flexibilité** : architecture compatible avec n'importe quel backend
+- ✅ **Tests facilitées** : comportement API prévisible pour les mocks
+
 ##  Conclusion : Une session prête pour l'intégration
 
 Cette architecture **simple et focalisée** offre :
